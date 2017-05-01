@@ -12,6 +12,10 @@
 
 <body>
     <style>
+        body {
+            background: url("img/bg.jpg");
+            background-size: cover;
+        }
         .main-content {
             height: 100vh;
         }
@@ -20,11 +24,21 @@
             display: block;
             margin: auto;
             margin-top: 40%;
+            max-width: 100%;
         }
         
         .button-wrapper h1 {
             text-align: center;
             margin-top: 40%;
+        }
+
+        .btn-cont {
+            padding: 20px;
+            padding-left: 0;
+        }
+        .btn-cont .btn {
+            padding: 10px;
+            font-size: 24px;
         }
         
         @media (min-width: 768px ) {
@@ -41,7 +55,8 @@
                 </div>
                 <div class="col-sm-7 col-xs-12 button-wrapper">
                     <h1>Pocket MAL</h1>
-
+                    <div class="btn-cont"><a href="" class="btn btn-primary">Google Play</a></div>
+                    <div class="btn-cont"><a href="" class="btn btn-primary">Donate</a></div>                   
                 </div>
             </div>
         </div>
