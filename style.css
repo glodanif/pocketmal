@@ -120,7 +120,8 @@ img {
 }
 
 .info-wrapper {
-    padding: 45px;
+    padding: 20px;
+	padding-top: 45px;
     height: auto;
 }
 
@@ -177,7 +178,8 @@ img {
         margin: 0;
     }
     .info-wrapper {
-        padding-top: 105px;
+		padding: 45px;
+		padding-top: 105px;
         height: calc(100vh - 81px);
     }
     .phone-wrapper {
