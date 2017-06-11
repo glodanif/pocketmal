@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" href="favicon.png" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
@@ -15,17 +16,26 @@
 <body>
     <style>
         body {
+            min-width: 320px;
             background: rgb(13, 71, 161);
-            background: -webkit-linear-gradient(rgb(35, 69, 150) 0%, rgb(0, 182, 232) 100%);
-            background: -moz-linear-gradient(rgb(35, 69, 150) 0%, rgb(0, 182, 232) 100%);
-            background: -o-linear-gradient(rgb(35, 69, 150) 0%, rgb(0, 182, 232) 100%);
-            background: linear-gradient(rgb(35, 69, 150) 0%, rgb(0, 182, 232) 100%);
+            background: -webkit-linear-gradient(rgb(34, 69, 150) 0%, rgb(5, 167, 222) 100%);
+            background: -moz-linear-gradient(rgb(34, 69, 150) 0%, rgb(5, 167, 222) 100%);
+            background: -o-linear-gradient(rgb(34, 69, 150) 0%, rgb(5, 167, 222) 100%);
+            background: linear-gradient(rgb(34, 69, 150) 0%, rgb(5, 167, 222) 100%);
             filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0d47a1', endColorstr='#2196f3', GradientType=0);
-            height: auto;
-            overflow: visible;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
             font-size: 18px;
             position: relative;
             color: #fff;
+        }
+        
+        hr {
+            clear: both;
+            margin: 0;
+            height: 1px;
+            background-color: #05a7de;
+            border: none;
         }
         
         img {
@@ -34,56 +44,85 @@
             margin: auto;
         }
         
-        .clear {
-            clear: both;
+        .header {
+            padding-top: 20px;
         }
         
-        .button-container {
+        .header-link-wrapper {
+            margin-bottom: 20px;
+        }
+        
+        .header-list {
+            margin: 0;
+            padding: 0;
+            float: right;
+        }
+        
+        .header-list li {
+            display: inline-block;
+            margin-left: 20px;
+            list-style-type: none;
+            line-height: 40px;
+            font-size: 16px;
+            font-weight: bold;
             text-align: center;
-            line-height: 60px;
+            text-transform: uppercase;
         }
-
-        .donate-btn {
-            width: 200px;
-            background: #ccc;
-            line-height: 40px;
-            margin: 10px auto;
+        
+        .header-list li:first-child {
+            margin-left: 0;
         }
-
-        .gcom-btn {
-            width: 200px;
-            line-height: 40px;
-            font-weight: bold;
-            margin: 10px auto;
-        }
-
-        .profile-btn {
-            width: 200px;
-            line-height: 40px;
-            font-weight: bold;
-            margin: 10px auto;
-        }
-
-        .gcom-btn a, .profile-btn a {
+        
+        .header-list li a {
             color: #fff;
-        }
-
-        .gcom-btn a:hover, .gcom-btn a:focus, .profile-btn a:hover, .profile-btn a:focus {
-            color: #e3e7e7;
+            transition: all 0.3s ease;
             text-decoration: none;
         }
-
-        .phone {
-            max-height: 725px;
+        
+        .header-list li a:hover,
+        .header-list li a:focus {
+            color: #f6e618;
         }
         
-        .main-content {
+        .header-list li a i {
+            font-size: 32px;
+            line-height: 40px;
+            display: block;
+        }
+        
+        .donate-btn {
+            max-width: 330px;
+            margin: auto;
             margin-top: 20px;
+            background: #fff;
+            color: #224596;
+            line-height: 40px;
+            border-radius: 2px;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .donate-btn:hover {
+            background: #05a7de;
+            color: #fff;
+        }
+        
+        .phone-wrapper {
+            margin-top: 25px;
+        }
+        
+        .phone {
+            max-height: 770px;
+            margin: auto;
         }
         
         .icon-wrapper {
             display: inline-block;
-            width: 80px;
+            width: 40px;
             float: left;
         }
         
@@ -91,97 +130,142 @@
             display: inline-block;
             float: left;
             margin: 0;
-            line-height: 80px;
-            padding: 0 15px;
-            font-size: 30px;
-        }
-        
-        .intro {
-            padding-top: 20px;
-            margin-bottom: 30px;
+            line-height: 40px;
+            padding: 0 10px;
+            font-size: 24px;
+            font-weight: bold;
         }
         
         .info-wrapper {
-            padding: 15px 0;
-            margin-bottom: 15px;
+            padding: 45px;
+            height: auto;
         }
         
         .google-btn {
+            margin: 45px 0 0 0;
+            width: 200px;
+        }
+        
+        .main-content p {
             margin: 0;
-            width: 240px;
         }
         
-        .myanimelist-link {
-            text-decoration: underline;
+        .main-content-link {
+            color: #f6e618;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .main-content-link:hover,
+        .main-content-link:focus {
             color: #fff;
-        }
-        
-        .myanimelist-link:hover,
-        .myanimelist-link:focus {
-            color: #00b6e8;
+            text-decoration: underline;
         }
         
         .credits {
-            position: absolute;
-            font-size: 12px;
-            bottom: 10px;
-            right: 10px;
+            font-size: 14px;
+            position: relative;
+            margin-top: 45px;
         }
-
+        
         @media (min-width: 768px) {
-            body {
-                height: 100vh;
-                overflow: hidden;
+            .header {
+                padding: 20px 0;
             }
-            .main-content {
-                margin-top: 10%;
+            .header-list {
+                float: none;
             }
-            .intro {
-                padding-top: 0px;
+            .header-list li:first-child {
+                margin-left: 20px;
+            }
+            .header-link-wrapper {
+                margin-bottom: 0;
             }
             .phone {
                 max-height: initial;
+                margin: 0;
+            }
+            .info-wrapper {
+                padding-top: 105px;
+                height: calc(100vh - 81px);
+            }
+            .phone-wrapper {
+                background: url("img/phone.png") 0px 60px no-repeat;
+                background-size: 100%;
+                height: calc(100vh - 81px);
+                margin-top: 0;
+            }
+            .donate-btn {
+                float: right;
+                width: 140px;
+                margin: auto;
+            }
+            .credits {
+                position: absolute;
+                bottom: 45px;
+            }
+        }
+        
+        @media (min-width: 1200px) {
+            .header-list li {
+                float: left;
+                margin-left: 60px;
+            }
+            .header-list li:first-child {
+                margin-left: 60px;
             }
         }
     </style>
-    <div class="container">
-        <div class="row">
-            <div class="button-bar">
-                <div class="button-container col-sm-4 col-sm-push-4 col-xs-12">
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-xs-12 header-link-wrapper">
+                    <div class="icon-wrapper">
+                        <img class="icon" src="img/icon.png" alt="icon">
+                    </div>
+                    <h1 class="icon-text">PocketMAL</h1>
+                    <ul class="header-list">
+                        <li><a href="https://plus.google.com/u/0/communities/113892850601403152996" target="_blank"><i class="fa fa-google-plus hidden-lg" aria-hidden="true"></i><span class="visible-lg">News</span></a></li>
+                        <li><a href="mailto:glodanif@gmail.com"><i class="fa fa-envelope-o hidden-lg" aria-hidden="true"></i><span class="visible-lg">Contact Me</span></a></li>
+                    </ul>
+
+                </div>
+                <div class="col-sm-6 col-xs-12">
+                    <hr class="visible-xs">
                     <div class="donate-btn">Donate</div>
                 </div>
-                <div class="button-container col-sm-4 col-sm-pull-4 col-xs-12">
-                    <div class="gcom-btn"><a href="#">Google+</a></div>
-                </div>
-                <div class="button-container col-sm-4 col-xs-12">
-                    <div class="profile-btn"><a href="#">GitHub</a></div>
-                </div>
             </div>
-            <div class="clear"></div>
+        </div>
+    </header>
+    <div class="container">
+        <hr class="hidden-xs">
+        <div class="row">
             <div class="main-content">
-                <div class="col-sm-5 col-xs-12">
-                    <div class="phone-wrapper"><img class="phone" src="img/phone.png" alt="phone"></div>
+                <div class="col-sm-6 col-xs-12">
+                    <div class="phone-wrapper"><img src="img/phone.png" alt="phone" class="phone visible-xs"></div>
                 </div>
-                <div class="col-sm-5 col-sm-offset-1 col-xs-12 intro">
-                    <div class="icon-wrapper"><img class="icon" src="img/icon.png" alt="icon"></div>
-                    <h1 class="icon-text">Pocket MAL</h1>
-                    <div class="clear"></div>
+                <div class="col-sm-6 col-xs-12">
                     <div class="info-wrapper">
                         <p>Pocket MAL is an unoffical Android client for popular anime knowledge base <a href="https://myanimelist.net"
-                                target="_blank" class="myanimelist-link">myanimelist.net</a>. As the original website this application
+                                target="_blank" class="main-content-link">myanimelist.net</a>. As the original website this application
                             will provide you with an ability to review detailed information about any anime or manga.</p>
+                        </br>
                         <p>And the key feature of myanimelist is tracking - you will never lost the list and progress of watched
                             anime and read manga.</p>
                         </br>
+                        <p>Visit Pocket MAL <a href="https://plus.google.com/u/0/communities/113892850601403152996" target="_blank"
+                                class="main-content-link">Google+ community</a> to get news about the project</p>
+                        </br>
+                        <p>Developed by <a href="https://myanimelist.net/profile/G-Lodan" target="_blank" class="main-content-link">Vasyl Glodan</a></p>
                         <a class="google-btn-link" href='https://play.google.com/store/apps/details?id=com.g.pocketmal&utm_source=Website&utm_campaign=Website&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'>
                             <img class="google-btn" alt='Get it on Google Play' src='img/google-btn.png' />
                         </a>
+                        <div class="credits">Crafted by fellow anime lovers</div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="credits">Developed without love by</div>
 </body>
 
 </html>
