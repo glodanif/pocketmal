@@ -79,9 +79,28 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Use address below to donate Bitcoins. Thanks!</h4>
+                    <h4 class="modal-title">Use address below to donate via PayPal or Bitcion. Thanks!</h4>
                 </div>
                 <div class="modal-body">
+
+                    <div id="donate-button-container">
+                        <div id="donate-button"></div>
+                        <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
+                        <script>
+                        PayPal.Donation.Button({
+                        env:'production',
+                        hosted_button_id:'DGYSFXJEQJNHY',
+                        image: {
+                        src:'https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif',
+                        alt:'Donate with PayPal button',
+                        title:'PayPal - The safer, easier way to pay online!',
+                        }
+                        }).render('#donate-button');
+                        </script>
+                    </div>
+                    </br>
+                    </hr>
+                    </br>
                     <p><a href="bitcoin:1M73HMPoczNBAnJVAutaX1KgQ5vod9Wwz2">1M73HMPoczNBAnJVAutaX1KgQ5vod9Wwz2</a></p>
 					<img src="img/qr_wallet.png" />
 					</br>
